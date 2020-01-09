@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGen", "source\CodeGen\CodeGen.csproj", "{5CA75FB2-D1F0-4303-9F32-B587F6B24A9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{415C58D1-8615-4009-8879-D3466C41D82C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CA75FB2-D1F0-4303-9F32-B587F6B24A9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CA75FB2-D1F0-4303-9F32-B587F6B24A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CA75FB2-D1F0-4303-9F32-B587F6B24A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CA75FB2-D1F0-4303-9F32-B587F6B24A9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415C58D1-8615-4009-8879-D3466C41D82C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415C58D1-8615-4009-8879-D3466C41D82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415C58D1-8615-4009-8879-D3466C41D82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415C58D1-8615-4009-8879-D3466C41D82C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

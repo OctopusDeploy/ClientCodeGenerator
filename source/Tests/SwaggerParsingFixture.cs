@@ -14,10 +14,7 @@ namespace Octopus.Server.CodeGen.Tests
             var filename = Path.GetTempFileName();
             try
             {
-                using var stream = typeof(SwaggerParsingFixture).Assembly.GetManifestResourceStream(typeof(SwaggerParsingFixture).Namespace + ".FullApiSwagger.json")
-                             ?? throw new Exception("Test swagger file not found as an embedded resource");
-                using(var temp = File.OpenWrite(filename))
-                    stream.CopyTo(temp);
+                File.WriteAllText(filename, this.GetEmbeddedResourceAsString("FullApiSwagger.json"));
 
                 var result = SwaggerParser.Parse(filename);
                 

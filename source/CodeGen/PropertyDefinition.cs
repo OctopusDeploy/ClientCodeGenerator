@@ -22,6 +22,7 @@ namespace Octopus.Server.CodeGen
 
         public string Name { get; }
         public string Type { get; }
+        public bool IsRequired => Name == "Name"; // TODO: Get this info the swagger doc and use that
         public CollectionType CollectionType { get; }
     }
 }

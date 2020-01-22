@@ -1,0 +1,93 @@
+<#@ template language="C#" #>
+<#@ parameter type="IReadOnlyList<ApiDefinition>" name="apis" #>
+<#@ parameter type="IReadOnlyList<ResourceDefinition>" name="resources" #>
+<#
+    var resourceName = apis[0].ResourceName;
+#>
+package octopusdeploy
+
+import (
+	"fmt"
+
+	"github.com/dghubble/sling"
+	"gopkg.in/go-playground/validator.v9"
+)
+
+type <#=resourceName #>Service struct {
+	sling *sling.Sling
+}
+
+func New<#=resourceName #>Service(sling *sling.Sling) *<#=resourceName #>Service {
+	return &<#=resourceName #>Service{
+		sling: sling,
+	}
+}
+
+<#
+    foreach (var resource in resources)
+    {
+#>
+type <#= resource.Name #> struct {
+<#
+        var padNameTo = resource.Properties.Max(p => p.Name.Length);
+        var requiredProperties = resource.Properties.Where(p => p.IsRequired);
+
+        foreach (var property in resource.Properties)
+        {
+#>
+    <#= property.Name.PadRight(padNameTo) #> <#= property.Type.FormatType(property.CollectionType).PadRight(10) #> <#= property.GetPropertyMetadata() #>
+<#
+        }
+#>
+}
+
+<#
+        if (apis.Any(a => a.Returns == resource.Name && a.ReturnCollectionType == CollectionType.ResourceCollection))
+        {
+#>
+type <#= resource.Name #>Collection struct {
+	Items []<#= resource.Name #> `json:"Items"`
+	PagedResults
+}
+
+<#
+        }
+#>
+func New<#= resource.Name #>(
+<#
+foreach (var property in requiredProperties)
+{
+    bool isLast = requiredProperties.Last() == property;           
+#>
+        <#= property.Name.PascalToCamelCase() #> <#= property.Type.FormatType(property.CollectionType) #><#= isLast ? "" : "," #>
+<#
+        } #>
+) *<#= resource.Name #> {
+    return &<#= resource.Name #> {
+<#
+        foreach (var property in requiredProperties)
+        {
+#>
+        <#= property.Name #>: <#= property.Name.PascalToCamelCase() #>,
+<#
+        } #>
+    }
+}
+       
+<#
+    }
+#>
+
+func (p *<#= resourceName #>) Validate() error {
+	validate := validator.New()
+
+	err := validate.Struct(p)
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+<# foreach(var api in apis 

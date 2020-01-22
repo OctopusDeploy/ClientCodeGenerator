@@ -1,0 +1,21 @@
+<#@ template language="C#" #>
+<#@ parameter type="IReadOnlyList<ApiDefinition>" name="apis" #>
+
+---
+title: <#= apis[0].Area #>
+description: TODO
+position: 100
+---
+
+## APIs
+
+<# foreach(var api in apis) { #>
+     **<#= api.Method.ToUpper() #> <#= api.Template #>**
+     *<#= Helpers.FormatType(api.Retruns, api.ReturnCollectionType) #>
+     <#= api.Summary #>
+     <#= api.Description#>
+<# } #>
+
+
+## Resources
+

@@ -9,12 +9,13 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeGen\CodeGen.csproj" />
+    <ProjectReference Include="..\Docs\Docs.csproj" />
     <PackageReference Include="Assent" Version="1.3.1" />
     <PackageReference Include="FluentAssertions" Version="5.10.0" />
     <PackageReference Include="NSubstitute" Version="4.2.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="NUnit" Version="3.12.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.16.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
     <PackageReference Include="TeamCity.VSTest.TestAdapter" Version="1.0.18" />
   </ItemGroup>
   <ItemGroup>

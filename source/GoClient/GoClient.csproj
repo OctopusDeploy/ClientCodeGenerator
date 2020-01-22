@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Octopus.Server.CodeGen.Docs</AssemblyName>
+    <RootNamespace>Octopus.Server.CodeGen.Docs</RootNamespace>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeGen\CodeGen.csproj" />
+    <PackageReference Include="Mono.TextTemplating" Version="2.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="**\*.tt" />
+  </ItemGroup>
+
+</Project>

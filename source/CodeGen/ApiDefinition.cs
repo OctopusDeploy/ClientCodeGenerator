@@ -9,7 +9,7 @@ namespace Octopus.Server.CodeGen
 	
         public ApiDefinition(
             string id, 
-            string area, 
+            string resourceNamePlural, 
             string template, 
             string method, 
             string? summary, 
@@ -18,7 +18,7 @@ namespace Octopus.Server.CodeGen
             string? returns)
         {
             Id = id;
-            Area = area;
+            ResourceNamePlural = resourceNamePlural;
             Template = template;
             Method = method;
             Summary = summary;
@@ -28,7 +28,8 @@ namespace Octopus.Server.CodeGen
         }
 
         public string Id { get; }
-        public string Area { get; }
+        public string ResourceName => ResourceNamePlural.GetSingular();
+        public string ResourceNamePlural { get; }
         public string Template { get; }
         public string Method { get; }
         public string? Summary { get; }

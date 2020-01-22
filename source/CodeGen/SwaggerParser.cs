@@ -129,13 +129,4 @@ namespace Octopus.Server.CodeGen
             );
         }
     }
-
-    public static class JsonExtensions
-    {
-        public static string GetStringOrThrow(this JToken obj, string name)
-            => (string?) obj.GetValueOrThrow(name) ?? throw new Exception($"value of {name} property is null");
-
-        public static JToken GetValueOrThrow(this JToken obj, string name)
-            => obj[name] ?? throw new Exception($"{name} property not found");
-    }
 }

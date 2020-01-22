@@ -15,6 +15,10 @@ ProjectSection(SolutionItems) = preProject
 	gitversion.yml = gitversion.yml
 EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docs", "Docs\Docs.csproj", "{1E0F574B-0194-46A3-8F1D-12E90CB32FED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoClient", "GoClient\GoClient.csproj", "{D2B02E0E-E0C6-4B97-84D9-5503F4F5A463}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,5 +33,13 @@ Global
 		{415C58D1-8615-4009-8879-D3466C41D82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{415C58D1-8615-4009-8879-D3466C41D82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{415C58D1-8615-4009-8879-D3466C41D82C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E0F574B-0194-46A3-8F1D-12E90CB32FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E0F574B-0194-46A3-8F1D-12E90CB32FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E0F574B-0194-46A3-8F1D-12E90CB32FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E0F574B-0194-46A3-8F1D-12E90CB32FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2B02E0E-E0C6-4B97-84D9-5503F4F5A463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2B02E0E-E0C6-4B97-84D9-5503F4F5A463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2B02E0E-E0C6-4B97-84D9-5503F4F5A463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2B02E0E-E0C6-4B97-84D9-5503F4F5A463}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
